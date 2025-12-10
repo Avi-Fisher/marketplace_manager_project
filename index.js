@@ -1,13 +1,13 @@
 import db from "db.js"
 
-export function addProduct(title,price,description,category){
+export function addProduct(title, price, description, category) {
 
     let product = {
-        id: db.length === 0  ? 1 : Math.max(...db.map(o => o.id)),
-        title : title,
-        price : price,
-        description : description, 
-        category : category
+        id: db.length === 0 ? 1 : Math.max(...db.map(o => o.id)),
+        title: title,
+        price: price,
+        description: description,
+        category: category
     }
 
     db.push(product)
@@ -17,16 +17,35 @@ export function addProduct(title,price,description,category){
 
 
 
-export function removeProduct(id){
+export function editPrice(id, newPrice) {
 
-   db = db.filter((product) => {
-        if(product.id != id){
+    let find = db.find(o => o.id == id)
+
+    if (find == undefined) {
+        console.log("The product not found");
+    } else {
+        find = newPrice
+        console.log("Save new price");
+    }
+}
+
+
+
+export function removeProduct(id) {
+
+    db = db.filter((product) => {
+        if (product.id != id) {
             return product
         }
-   })
-   
-   console.log("The product has been removed successfully");
-   
+    })
+
+    console.log("The product has been removed successfully");
 }
+
+
+
+
+
+
 
 
