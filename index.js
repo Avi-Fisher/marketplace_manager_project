@@ -3,7 +3,7 @@ import db from "db.js"
 export function addProduct(title,price,description,category){
 
     let product = {
-        id: Math.max(...db.map(o => o.id)),
+        id: db.length === 0  ? 1 : Math.max(...db.map(o => o.id)),
         title : title,
         price : price,
         description : description, 
