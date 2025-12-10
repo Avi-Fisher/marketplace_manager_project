@@ -13,5 +13,20 @@ export function addProduct(title,price,description,category){
     db.push(product)
 
     console.log("The product has been successfully added");
-
 }
+
+
+
+export function removeProduct(id){
+
+   db = db.filter((product) => {
+        if(product.id != id){
+            return product
+        }
+   })
+   
+   console.log("The product has been removed successfully");
+   
+}
+
+
