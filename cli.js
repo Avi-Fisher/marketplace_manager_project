@@ -1,5 +1,5 @@
-import input from "./uttils.js";
-import db from "./db.js"
+import {input,input_int }from "./uttils.js";
+
 import {filterOnCategory,addProduct,editPrice,removeProduct,showByPriceOrder} from "./index.js"
 
 
@@ -9,7 +9,7 @@ export default function printCli() {
     console.log(`    === marketplace manager ===
         1. append item to sell
         2. edit an exist product
-        3. show all items
+        3. show all items by price
         4. show information on items
         5. delete an item 
         6. filter on about category
@@ -23,7 +23,7 @@ while (flag) {
     switch (choice) {
         case "1":
             let title = input("\nenter a title of your items: ")
-            let price = input("enter a price of your product: ")
+            let price = input_int("enter a price of your product: ")
             let description = input("enter a description of your product: ")
             let category = input("enter a category of this item: ")
             addProduct(title, price, description, category)
@@ -31,7 +31,7 @@ while (flag) {
 
         case "2":
             let findId = input("\nplease enter product id: ")
-            let newPrice = input("please enter a new price: ")
+            let newPrice = input_int("please enter a new price: ")
             editPrice(findId, newPrice)
             break
 

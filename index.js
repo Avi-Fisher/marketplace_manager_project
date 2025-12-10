@@ -3,7 +3,7 @@ import db from "./db.js"
 export function addProduct(title, price, description, category) {
 
     let product = {
-        id: db.length === 0 ? 1 : Math.max(...db.map(o => o.id)),
+        id: db.length === 0 ? 1 : Math.max(...db.map(o => o.id)) + 1,
         title: title,
         price: price,
         description: description,
@@ -69,7 +69,7 @@ export function showProductDetails(id) {
     const prodect = db.find(item => item.id == id)
 
     console.log("=== product details ===")
-  for (const [key, value] of Object.entries(prodect)) {
+    for (const [key, value] of Object.entries(prodect)) {
         console.log(`${key}: ${value}`);
     }
 
@@ -77,10 +77,10 @@ export function showProductDetails(id) {
 
 
 
-export function showByPriceOrder(){
+export function showByPriceOrder() {
     let sortDB = db
-    sortDB.sort((a,b)=> b.price - a.price)
-    console.table(sortDB) 
+    sortDB.sort((a, b) => b.price - a.price)
+    console.table(sortDB)
 }
 
-  
+
