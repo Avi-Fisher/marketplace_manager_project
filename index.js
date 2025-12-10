@@ -24,7 +24,7 @@ export function editPrice(id, newPrice) {
     if (find == undefined) {
         console.log("The product not found");
     } else {
-        find = newPrice
+        find.price = newPrice
         console.log("Save new price");
     }
 }
