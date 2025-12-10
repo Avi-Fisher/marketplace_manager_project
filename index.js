@@ -1,4 +1,4 @@
-import db from "./db.js";
+import db from "./db.js"
 
 export function addProduct(title, price, description, category) {
 
@@ -13,6 +13,24 @@ export function addProduct(title, price, description, category) {
     db.push(product)
 
     console.log("The product has been successfully added");
+}
+
+
+
+
+
+
+
+export function filterOnCategory(category) {
+    let categoryItems = db.filter(item => item.category.toLowerCase() == category.toLowerCase())
+    if (categoryItems.length <= 0) {
+        console.log("not found! ");
+
+    }
+    else {
+        console.log(categoryItems);
+
+    }
 }
 
 
@@ -51,6 +69,17 @@ export function showProductDetails(id) {
     const prodect = db.find(item => item.id == id)
 
     console.log("=== product details ===")
+
+export function showByPriceOrder(){
+    let sortDB = db
+    sortDB.sort((a,b)=> b.price - a.price)
+    console.table(sortDB) 
+}
+
+
+
+
+
 
     for (const [key, value] of Object.entries(prodect)) {
         console.log(`${key}: ${value}`);
