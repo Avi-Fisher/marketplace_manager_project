@@ -34,13 +34,22 @@ export function editPrice(id, newPrice) {
 export function removeProduct(id) {
 
     const index = db.findIndex(item => item.id == id)
-    
-    if(index !== "undefined"){
-        db.splice(db[index],1)
+
+    if (index !== "undefined") {
+        db.splice(db[index], 1)
         console.log("Item remove");
-        
-    }else{
+
+    } else {
         console.log("Item not found");
     }
+}
+
+
+
+export function showProductDetails(id) {
+
+    const prodect = db.find(item => item.id == id)
+
+    console.log("=== product details \n", prodect);
 }
 
