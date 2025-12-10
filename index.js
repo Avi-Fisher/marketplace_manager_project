@@ -1,4 +1,4 @@
-import db from "db.js"
+import db from "./db.js";
 
 export function addProduct(title, price, description, category) {
 
@@ -33,19 +33,14 @@ export function editPrice(id, newPrice) {
 
 export function removeProduct(id) {
 
-    db = db.filter((product) => {
-        if (product.id != id) {
-            return product
-        }
-    })
-
-    console.log("The product has been removed successfully");
+    const index = db.findIndex(item => item.id == id)
+    
+    if(index !== "undefined"){
+        db.splice(db[index],1)
+        console.log("Item remove");
+        
+    }else{
+        console.log("Item not found");
+    }
 }
-
-
-
-
-
-
-
 
