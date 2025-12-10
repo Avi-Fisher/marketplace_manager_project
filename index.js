@@ -61,10 +61,11 @@ export function removeProduct(id) {
 }
 
 
-
-
-
-
+export function showByPriceOrder(){
+    let sortDB = db
+    sortDB.sort((a,b) => b.price - a.price)
+    console.table(sortDB);   
+}
 
 
 

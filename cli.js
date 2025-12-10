@@ -1,6 +1,6 @@
 import input from "./uttils.js";
 import db from "./db.js"
-import {filterOnCategory} from "./index.js"
+import {filterOnCategory,addProduct,editPrice,removeProduct,showByPriceOrder} from "./index.js"
 
 
 
