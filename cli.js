@@ -1,4 +1,8 @@
 import input from "./uttils.js";
+import db from "./db.js"
+import {filterOnCategory} from "./index.js"
+
+
 
 
 export default function printCli() {
@@ -23,22 +27,32 @@ while (flag) {
             let description = input("enter a description of your product: ")
             let category = input("enter a category of this item: ")
             addProduct(title, price, description, category)
+            break 
 
         case "2":
             let findId = input("\nplease enter product id: ")
             let newPrice = input("please enter a new price: ")
             editPrice(findId, newPrice)
+            break
 
         case "3":
-            showByPriceOrder(DB)
+            showByPriceOrder(db)
+            break
 
         case "4":
             let itemId = input("\nplease enter your item id: ")
             showByPriceDetails(itemId)
+            break 
 
         case "5":
             let id = input("\nplease enter item id do you want to delete: ")
             removeProduct(id)
+            break
+
+        case "6":
+            let filterCategory = input("enter your category do you want: ")
+            filterOnCategory(filterCategory)
+            break
 
         case "0":
             flag = false
