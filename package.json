@@ -1,0 +1,24 @@
+{
+  "name": "marketplace_manager_project",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000m\u0000a\u0000r\u0000k\u0000e\u0000t\u0000p\u0000l\u0000a\u0000c\u0000e\u0000_\u0000m\u0000a\u0000n\u0000a\u0000g\u0000e\u0000r\u0000_\u0000p\u0000r\u0000o\u0000j\u0000e\u0000c\u0000t\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Avi-Fisher/marketplace_manager_project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Avi-Fisher/marketplace_manager_project/issues"
+  },
+  "homepage": "https://github.com/Avi-Fisher/marketplace_manager_project#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
