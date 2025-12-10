@@ -15,7 +15,7 @@ let flag = true
 while (flag) {
     printCli()
     let choice = input("please enter your choice from menu: ")
-    
+
     switch (choice) {
         case "1":
             let title = input("\nenter a title of your items: ")
@@ -28,23 +28,23 @@ while (flag) {
             let findId = input("\nplease enter product id: ")
             let newPrice = input("please enter a new price: ")
             editPrice(findId, newPrice)
-        
+
         case "3":
             showByPriceOrder(DB)
 
         case "4":
             let itemId = input("\nplease enter your item id: ")
             showByPriceDetails(itemId)
-        
+
         case "5":
             let id = input("\nplease enter item id do you want to delete: ")
             removeProduct(id)
-        
+
         case "0":
             flag = false
             break
-        default: 
+        default:
             console.log("\ninvalid input please enter from menu!\n ");
-        
+
     }
 }

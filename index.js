@@ -1,4 +1,4 @@
-import db from "db.js"
+import db from "./db.js"
 
 export function addProduct(title,price,description,category){
 
@@ -15,3 +15,17 @@ export function addProduct(title,price,description,category){
     console.log("The product has been successfully added");
 
 }
+
+
+
+
+
+
+
+export function filterOnCategory(category){
+    let categoryItems = db.filter(item => item.category == category)
+    return categoryItems
+}
+
+
+console.log(filterOnCategory("Books"));
