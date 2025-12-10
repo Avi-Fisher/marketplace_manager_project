@@ -42,7 +42,7 @@ export function editPrice(id, newPrice) {
     if (find == undefined) {
         console.log("The product not found");
     } else {
-        find = newPrice
+        find.price = newPrice
         console.log("Save new price");
     }
 }
@@ -51,21 +51,34 @@ export function editPrice(id, newPrice) {
 
 export function removeProduct(id) {
 
-    db = db.filter((product) => {
-        if (product.id != id) {
-            return product
-        }
-    })
+    const index = db.findIndex(item => item.id == id)
 
-    console.log("The product has been removed successfully");
+    if (index !== "undefined") {
+        db.splice(db[index], 1)
+        console.log("Item remove");
+
+    } else {
+        console.log("Item not found");
+    }
 }
 
+
+
+export function showProductDetails(id) {
+
+    const prodect = db.find(item => item.id == id)
+
+    console.log("=== product details ===\n", prodect);
+}
 
 export function showByPriceOrder(){
     let sortDB = db
-    sortDB.sort((a,b) => b.price - a.price)
-    console.table(sortDB);   
+    sortDB.sort((a,b)=> b.price - a.price)
+    console.table(sortDB) 
 }
+
+
+
 
 
 

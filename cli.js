@@ -36,7 +36,7 @@ while (flag) {
             break
 
         case "3":
-            showByPriceOrder(db)
+            showByPriceOrder()
             break
 
         case "4":
