@@ -68,8 +68,7 @@ export function showProductDetails(id) {
 
     const prodect = db.find(item => item.id == id)
 
-    console.log("=== product details ===\n", prodect);
-}
+    console.log("=== product details ===")
 
 export function showByPriceOrder(){
     let sortDB = db
@@ -82,3 +81,7 @@ export function showByPriceOrder(){
 
 
 
+    for (const [key, value] of Object.entries(prodect)) {
+        console.log(`${key}: ${value}`);
+    }
+}
